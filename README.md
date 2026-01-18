@@ -153,7 +153,7 @@ query {
 ```graphql
 mutation {
   createProject(
-    organizationSlug: "my-organization"
+    organizationSlug: "my-org"
     name: "New Project"
   ) {
     project {
