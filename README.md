@@ -271,15 +271,11 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ---
 
-## 📝 License
 
-This project is open source and available under the [MIT License](LICENSE).
-
----
 
 ## 👨‍💻 Author
 
-Your Name - [Your GitHub](https://github.com/yourusername)
+Your Name - [Your GitHub](https://github.com/usa1204119)
 
 ---
 
