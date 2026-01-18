@@ -1,0 +1,9 @@
+# Django Framework
+Django==5.1.7
+
+# GraphQL
+graphene-django==3.2.0
+graphql-core==3.2.3
+
+# CORS Headers
+django-cors-headers==4.3.1
