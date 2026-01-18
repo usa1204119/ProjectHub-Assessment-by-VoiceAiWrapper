@@ -84,53 +84,7 @@ Comment creation
 
 Comment deletion
 
-🗂️ Correct Folder Structure
-root
-│
-├── backend
-│   ├── backend
-│   │   ├── schema.py          # Root GraphQL schema
-│   │   ├── settings.py
-│   │   ├── urls.py
-│   │   └── ...
-│   │
-│   ├── organizations
-│   │   ├── models.py
-│   │   ├── graphql
-│   │   │   ├── types.py
-│   │   │   ├── queries.py
-│   │   │   └── mutations.py
-│   │   └── ...
-│   │
-│   ├── projects
-│   │   ├── models.py
-│   │   ├── graphql
-│   │   │   ├── types.py
-│   │   │   ├── queries.py
-│   │   │   └── mutations.py
-│   │   └── ...
-│   │
-│   ├── tasks
-│   │   ├── models.py
-│   │   ├── graphql
-│   │   │   ├── types.py
-│   │   │   ├── queries.py
-│   │   │   └── mutations.py
-│   │   └── ...
-│   │
-│   ├── manage.py
-│   ├── db.sqlite3
-│   └── requirements.txt
-│
-└── frontend
-    ├── src
-    │   ├── apollo
-    │   │   └── client.ts
-    │   ├── App.tsx
-    │   ├── main.tsx
-    │   └── index.css
-    ├── package.json
-    └── vite.config.ts
+
 
 🛠️ Tech Stack
 Backend
