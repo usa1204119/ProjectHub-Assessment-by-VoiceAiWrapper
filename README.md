@@ -1,142 +1,128 @@
-🚀 Project Hub – GraphQL Project Management Dashboard
+# 🚀 Project Hub – GraphQL Project Management Dashboard
 
-A full-stack Project Management Dashboard built with Django + GraphQL (Graphene) on the backend and React + Apollo Client + Tailwind CSS on the frontend.
+A full-stack Project Management Dashboard built with **Django + GraphQL (Graphene)** on the backend and **React + Apollo Client + Tailwind CSS** on the frontend.
 
 This application demonstrates real-world GraphQL usage, Apollo cache management, and a modern UI for managing organizations, projects, tasks, and comments.
 
-🎯 Project Objective
+---
+
+## 🎯 Project Objective
 
 The goal of this project is to demonstrate:
 
-Practical GraphQL API design (queries + mutations)
+- **Practical GraphQL API design** (queries + mutations)
+- **Clean data relationships** (Organization → Project → Task → Comment)
+- **Live UI updates** without page refresh using Apollo Cache
+- **Production-style frontend** using React and Tailwind CSS
+- **Proper separation** of backend and frontend concerns
 
-Clean data relationships (Organization → Project → Task → Comment)
+### This is not just CRUD — it showcases:
 
-Live UI updates without page refresh using Apollo Cache
+- ✨ Optimistic UI updates
+- 🔄 Cache synchronization
+- 🧩 Component-driven UI architecture
+- 📈 Scalable schema design
 
-A production-style frontend using React and Tailwind CSS
+---
 
-Proper separation of backend and frontend concerns
+## 🧠 Key Features
 
-This is not just CRUD — it showcases:
+### ✅ Backend (GraphQL API)
 
-Optimistic UI updates
+- **Organizations**
+- **Projects** under organizations
+- **Tasks** under projects
+- **Comments** under tasks
 
-Cache synchronization
+### ✅ GraphQL Operations
 
-Component-driven UI architecture
+**Queries:**
+- Fetch all organizations with nested projects, tasks, and comments
 
-Scalable schema design
+**Mutations:**
+- Create Project
+- Rename Project
+- Create Task
+- Update Task Status (TODO → DONE)
+- Create Comment
+- Delete Comment
 
-🧠 Key Features (All Implemented)
-✅ Backend (GraphQL API)
+> All mutations return structured GraphQL payloads.
 
-Organizations
+### ✅ Frontend (React + Apollo)
 
-Projects under organizations
+- 🎨 Dashboard UI with dark theme
+- 📋 Project cards with status badges
+- ✅ Task management panel
+- 💬 Comment dropdown per task
+- ⚡ Live updates without refresh
+- 🚀 Optimistic updates for task status
+- 🔄 Apollo cache updates for:
+  - Project creation
+  - Task creation
+  - Comment creation
+  - Comment deletion
 
-Tasks under projects
+---
 
-Comments under tasks
+## 🛠️ Tech Stack
 
-✅ GraphQL Operations
-Queries
+### Backend
+| Technology | Purpose |
+|-----------|---------|
+| Python | Core language |
+| Django | Web framework |
+| Graphene-Django | GraphQL integration |
+| SQLite | Database |
+| GraphQL | API query language |
 
-Fetch all organizations with nested projects, tasks, and comments
+### Frontend
+| Technology | Purpose |
+|-----------|---------|
+| React (Vite) | UI framework |
+| Apollo Client | GraphQL client |
+| GraphQL | Data fetching |
+| Tailwind CSS v4 | Styling |
+| TypeScript | Type safety |
 
-Mutations
+---
 
-Create Project
+## ▶️ How to Run the Project
 
-Rename Project
+### 1️⃣ Backend Setup
 
-Create Task
-
-Update Task Status (TODO → DONE)
-
-Create Comment
-
-Delete Comment
-
-All mutations return structured GraphQL payloads.
-
-✅ Frontend (React + Apollo)
-
-Dashboard UI with dark theme
-
-Project cards with status badges
-
-Task management panel
-
-Comment dropdown per task
-
-Live updates without refresh
-
-Optimistic updates for task status
-
-Apollo cache updates for:
-
-Project creation
-
-Task creation
-
-Comment creation
-
-Comment deletion
-
-
-
-🛠️ Tech Stack
-Backend
-
-Python
-
-Django
-
-Graphene-Django
-
-SQLite
-
-GraphQL
-
-Frontend
-
-React (Vite)
-
-Apollo Client
-
-GraphQL
-
-Tailwind CSS v4
-
-TypeScript
-
-▶️ How to Run the Project
-1️⃣ Backend Setup
+```bash
 cd backend
 python -m venv venv
 source venv/bin/activate   # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
+```
 
+**GraphQL Playground** will be available at:  
+👉 http://localhost:8000/graphql/
 
-GraphQL Playground will be available at:
+---
 
-http://localhost:8000/graphql/
+### 2️⃣ Frontend Setup
 
-2️⃣ Frontend Setup
+```bash
 cd frontend
 npm install
 npm run dev
+```
 
+**Frontend** will run at:  
+👉 http://localhost:5173
 
-Frontend will run at:
+---
 
-http://localhost:5173
+## 🧪 GraphQL Test Cases
 
-🧪 GraphQL Test Cases (Example)
-Query: Fetch Full Data Tree
+### Query: Fetch Full Data Tree
+
+```graphql
 query {
   organizations {
     id
@@ -158,8 +144,13 @@ query {
     }
   }
 }
+```
 
-Mutation: Create Project
+---
+
+### Mutation: Create Project
+
+```graphql
 mutation {
   createProject(
     organizationSlug: "my-organization"
@@ -172,8 +163,13 @@ mutation {
     }
   }
 }
+```
 
-Mutation: Create Task
+---
+
+### Mutation: Create Task
+
+```graphql
 mutation {
   createTask(
     projectId: "1"
@@ -186,8 +182,13 @@ mutation {
     }
   }
 }
+```
 
-Mutation: Update Task Status
+---
+
+### Mutation: Update Task Status
+
+```graphql
 mutation {
   updateTaskStatus(
     taskId: "1"
@@ -199,8 +200,13 @@ mutation {
     }
   }
 }
+```
 
-Mutation: Create Comment
+---
+
+### Mutation: Create Comment
+
+```graphql
 mutation {
   createComment(
     taskId: "1"
@@ -212,26 +218,76 @@ mutation {
     }
   }
 }
+```
 
-Mutation: Delete Comment
+---
+
+### Mutation: Delete Comment
+
+```graphql
 mutation {
   deleteComment(commentId: "1") {
     success
   }
 }
+```
 
-✅ What This Project Demonstrates
+---
 
-Proper GraphQL schema design
+## 📚 Project Structure
 
-Nested data querying
+```
+project-hub/
+├── backend/
+│   ├── manage.py
+│   ├── requirements.txt
+│   └── ...
+├── frontend/
+│   ├── src/
+│   ├── package.json
+│   └── ...
+└── README.md
+```
 
-Mutation-driven state updates
+---
 
-Apollo cache manipulation
+## ✅ What This Project Demonstrates
 
-Optimistic UI updates
+| Feature | Implementation |
+|---------|---------------|
+| GraphQL Schema Design | Proper type definitions and resolvers |
+| Nested Data Querying | Deep relationship traversal |
+| Mutation-Driven Updates | State management through GraphQL |
+| Apollo Cache Manipulation | Efficient client-side caching |
+| Optimistic UI Updates | Instant user feedback |
+| Clean UI/UX | Professional design with Tailwind |
+| Full-Stack Architecture | Realistic production patterns |
 
-Clean UI/UX with Tailwind
+---
 
-Realistic full-stack architecture
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+---
+
+## 📝 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+## 👨‍💻 Author
+
+Your Name - [Your GitHub](https://github.com/yourusername)
+
+---
+
+## 🙏 Acknowledgments
+
+- Built with ❤️ using Django, GraphQL, and React
+- Inspired by modern project management tools
+
+---
+
+**⭐ If you find this project helpful, please give it a star!**
